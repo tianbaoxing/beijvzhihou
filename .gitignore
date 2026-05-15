@@ -1,0 +1,27 @@
+# Git worktrees
+.worktrees/
+
+# 敏感配置文件
+backend/src/main/resources/application-dev.yml
+backend/src/main/resources/application-prod.yml
+*.env
+.env.*
+
+# 构建产物
+backend/target/
+frontend/dist/
+frontend/node_modules/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# 日志文件
+*.log
+logs/
+
+# 临时文件
+*.tmp
+*.swp
+*~

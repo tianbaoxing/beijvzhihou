@@ -1,0 +1,43 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/beijvzhihou_test?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+
+  sql:
+    init:
+      mode: never
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  type-aliases-package: com.beijvzhihou.entity
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: auto
+
+server:
+  port: 0
+
+app:
+  jwt:
+    secret: test-secret-key-must-be-at-least-32-characters-long-for-hmac-sha
+    expire-days: 7
+  email:
+    code-expire-minutes: 5
+  ai:
+    emotion-threshold: 2
+    deepseek:
+      api-key:
+      base-url: https://openrouter.ai/api/v1
+      model: deepseek/deepseek-v3.2
+    kimi2:
+      api-key:
+      base-url: https://openrouter.ai/api/v1
+      model: moonshotai/kimi-k2.6
+    qwen:
+      api-key:
+      base-url: https://openrouter.ai/api/v1
+      model: qwen/qwen3.6-plus

@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: beijvzhihou
+
+  # 文件上传大小限制
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 10MB
+
+# 统一日志配置
+logging:
+  level:
+    com.beijvzhihou: DEBUG
+    com.baomidou.mybatisplus: DEBUG
