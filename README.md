@@ -122,9 +122,10 @@ beijvzhihou-backend/
 │   │   │   └── KeywordFilter.java    # 关键词过滤
 │   │   └── BeijvzhihouApplication.java # 启动类
 │   ├── src/main/resources/
-│   │   ├── application.yml           # 主配置
-│   │   ├── application-dev.yml       # 开发环境配置
-│   │   └── keywords.txt              # 敏感词库
+│   │   ├── application.yml                 # 主配置
+│   │   ├── application-dev.yml.example     # 开发环境配置示例
+│   │   ├── application-prod.yml.example    # 生产环境配置示例
+│   │   └── keywords.txt                    # 敏感词库
 │   └── pom.xml
 ├── frontend/                         # Vue 3 前端
 │   ├── src/
@@ -164,7 +165,7 @@ beijvzhihou-backend/
 
 ```bash
 git clone https://github.com/tianbaoxing/beijvzhihou.git
-cd beijvzhihou-backend
+cd backend
 ```
 
 ### 2. 初始化数据库
@@ -263,6 +264,12 @@ CREATE TABLE IF NOT EXISTS `comment` (
 
 ### 3. 配置后端
 
+复制配置文件示例并编辑：
+
+```bash
+cp backend/src/main/resources/application-dev.yml.example backend/src/main/resources/application-dev.yml
+```
+
 编辑 `backend/src/main/resources/application-dev.yml`：
 
 ```yaml
@@ -319,7 +326,7 @@ mvn spring-boot:run
 ### 5. 启动前端
 
 ```bash
-cd frontend
+cd beijvzhihou/frontend
 npm install
 npm run dev
 ```
@@ -488,17 +495,26 @@ server {
 
 ## 🗺️ 路线图
 
+### ✅ 已完成
+
 - [x] 用户注册/登录（邮箱验证码）
-- [x] 帖子发布与 Feed 流
-- [x] 三 AI 串行安慰机制
-- [x] 轮询实时更新 AI 回复
+- [x] 帖子发布与 Feed 流（分页 + 排序）
+- [x] 三 AI 串行安慰机制（DeepSeek + Kimi2 + Qwen）
+- [x] 轮询实时更新 AI 回复（每 3 秒检测）
 - [x] 评论系统（支持嵌套回复）
 - [x] 点赞（支持匿名浏览器指纹）
-- [x] 管理员权限校验
+- [x] 管理员权限校验（拦截器级）
 - [x] 管理后台（统计/用户/帖子/审核）
-- [x] 关键词过滤
-- [x] 内容审核
-- [ ] Redis 缓存替换内存存储
+- [x] 关键词过滤（敏感词库）
+- [x] 内容审核（状态流转）
+- [x] 生产环境配置示例
+- [x] 开源准备（.gitignore + 配置示例）
+
+### 🔄 进行中
+
+### 📋 待开发
+
+- [ ] Redis 缓存替换内存存储（当前使用 ConcurrentHashMap）
 - [ ] 图片上传支持
 - [ ] 通知系统
 - [ ] 用户关注
