@@ -10,15 +10,33 @@
 
 ### 🛠️ Skills 工程化体系
 
+本项目包含以下核心开发技能（Skills）：
+
 | Skill | 功能 | 使用场景 |
 |-------|------|---------|
-| `SearchCodebase` | 代码检索 | 快速定位相关代码、理解现有实现 |
-| `Grep` | 文本搜索 | 查找关键词、定位问题代码 |
-| `Read` | 文件读取 | 查看文件内容、理解代码结构 |
-| `Edit` | 代码编辑 | 修改现有代码、实现功能 |
-| `Write` | 文件创建 | 创建新文件、初始化模块 |
-| `RunCommand` | 命令执行 | 运行测试、构建项目、Git 操作 |
-| `TodoWrite` | 任务管理 | 规划复杂任务、跟踪进度 |
+| `agent-browser` | 浏览器自动化 | 网页交互、数据爬取、自动化测试 |
+| `brainstorming` | 头脑风暴 | 需求分析、方案设计、创意讨论 |
+| `chinese-code-review` | 中文代码审查 | 代码质量检查、架构评审 |
+| `chinese-commit-conventions` | 中文提交规范 | Git 提交信息规范化 |
+| `chinese-documentation` | 中文文档编写 | 技术文档、API 文档撰写 |
+| `chinese-git-workflow` | 中文 Git 工作流 | 分支管理、代码合并流程 |
+| `dispatching-parallel-agents` | 并行代理调度 | 任务并行执行、分布式处理 |
+| `executing-plans` | 计划执行 | 按计划执行开发任务 |
+| `finishing-a-development-branch` | 完成开发分支 | 分支合并、代码集成 |
+| `java-coding-standards` | Java 编码标准 | Java 代码规范检查 |
+| `springboot-patterns` | Spring Boot 模式 | Spring Boot 最佳实践 |
+| `springboot-security` | Spring Boot 安全 | 安全配置、认证授权 |
+| `springboot-tdd` | Spring Boot TDD | 测试驱动开发 |
+| `springboot-verification` | Spring Boot 验证 | 代码验证、测试执行 |
+| `subagent-driven-development` | 子代理驱动开发 | 复杂任务分解与执行 |
+| `systematic-debugging` | 系统调试 | 问题定位、Bug 修复 |
+| `test-driven-development` | 测试驱动开发 | TDD 方法论实践 |
+| `using-git-worktrees` | Git Worktrees 使用 | 多分支并行开发 |
+| `using-superpowers` | 超级能力使用 | AI 辅助工具集 |
+| `verification-before-completion` | 完成前验证 | 交付前质量检查 |
+| `workflow-runner` | 工作流运行器 | 自动化工作流执行 |
+| `writing-plans` | 计划编写 | 任务规划文档撰写 |
+| `writing-skills` | 技能编写 | 自定义 Skill 开发 |
 
 ### 📋 工程化开发流程
 
