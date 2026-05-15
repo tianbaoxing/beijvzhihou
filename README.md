@@ -163,7 +163,7 @@ beijvzhihou-backend/
 ### 1. 克隆项目
 
 ```bash
-git clone https://github.com/your-username/beijvzhihou-backend.git
+git clone https://github.com/tianbaoxing/beijvzhihou.git
 cd beijvzhihou-backend
 ```
 
