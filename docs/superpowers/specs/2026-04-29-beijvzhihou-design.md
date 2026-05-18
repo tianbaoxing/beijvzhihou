@@ -26,7 +26,7 @@
 | 层级 | 技术选型 | 版本要求 |
 |------|---------|---------|
 | 前端框架 | Vue 3 + Vite | Vue 3.5+ / Vite 6+ |
-| 前端 UI | Element Plus / Naive UI | 最新稳定版 |
+| 前端 UI | Tailwind CSS | 最新稳定版 |
 | 后端框架 | Spring Boot 3 | 3.4.x |
 | AI 集成 | Spring AI 1.0 + OpenRouter | OpenAI 兼容格式 |
 | 数据库 | MySQL 8 / PostgreSQL | 8.0+ |
