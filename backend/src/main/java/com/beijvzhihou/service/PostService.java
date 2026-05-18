@@ -8,6 +8,7 @@ public interface PostService {
     PostVO createPost(Long userId, PostCreateDTO dto);
     PostVO createPostAndStartAiStream(Long userId, PostCreateDTO dto);
     PageResult<PostVO> listPosts(int page, int size, String sort);
+    PageResult<PostVO> listUserPosts(Long userId, int page, int size);
     PostVO getPost(Long postId, Long currentUserId, String fingerprint);
     void toggleLike(Long postId, Long userId, String fingerprint);
 }

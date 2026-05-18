@@ -134,6 +134,20 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
+    public PageResult<PostVO> listUserPosts(Long userId, int page, int size) {
+        Page<Post> pageParam = new Page<>(page, size);
+        LambdaQueryWrapper<Post> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(Post::getUserId, userId)
+                .eq(Post::getStatus, 1)
+                .orderByDesc(Post::getCreatedAt);
+        Page<Post> postPage = postMapper.selectPage(pageParam, wrapper);
+        List<PostVO> voList = postPage.getRecords().stream()
+                .map(p -> toPostVO(p, null, null))
+                .collect(Collectors.toList());
+        return PageResult.of(voList, postPage.getTotal(), (int) postPage.getCurrent(), (int) postPage.getSize());
+    }
+
+    @Override
     @Transactional
     public PostVO getPost(Long postId, Long currentUserId, String fingerprint) {
         Post post = postMapper.selectById(postId);

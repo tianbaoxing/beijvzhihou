@@ -47,6 +47,11 @@ public class AuthController {
         return Result.ok(authService.updateProfile(userId, body.get("nickname")));
     }
 
+    @PostMapping("/logout")
+    public Result<Void> logout() {
+        return Result.ok();
+    }
+
     @GetMapping("/debug/code")
     public Result<String> debugGetCode(@RequestParam String email) {
         return Result.ok(authService.getDebugCode(email));
