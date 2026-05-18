@@ -204,6 +204,25 @@ beijvzhihou-backend/
 - **MySQL 8.0+**
 - **OpenRouter API Key**（[获取地址](https://openrouter.ai/)）
 
+> ⚠️ **Windows 环境配置（每次开新终端必须执行）**
+
+如果系统默认的 Maven/Java 版本不满足要求，执行以下命令临时配置环境变量：
+
+```powershell
+$env:JAVA_HOME = "E:\ai\jdk-17.0.2"
+$env:Path = "E:\ai\jdk-17.0.2\bin;E:\ai\node-v20.19.4-win-x64;E:\ai\apache-maven-3.9.12\bin;" + $env:Path
+```
+
+验证环境版本：
+
+```bash
+java -version   # 必须显示 17.x
+node --version  # 必须显示 20.x
+mvn -version    # 必须显示 3.9.x
+```
+
+> 请根据本地实际安装路径修改上述命令中的目录路径。
+
 ### 1. 克隆项目
 
 ```bash
