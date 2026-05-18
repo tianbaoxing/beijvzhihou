@@ -17,6 +17,7 @@ CREATE TABLE IF NOT EXISTS `post` (
   `content` TEXT NOT NULL,
   `emotion_score_avg` DECIMAL(5,2) DEFAULT 0,
   `ai_response_count` INT DEFAULT 0,
+  `comment_count` INT DEFAULT 0,
   `like_count` INT DEFAULT 0,
   `view_count` INT DEFAULT 0,
   `status` TINYINT DEFAULT 1,
@@ -39,10 +40,12 @@ CREATE TABLE IF NOT EXISTS `ai_reply` (
 
 CREATE TABLE IF NOT EXISTS `post_like` (
   `id` BIGINT AUTO_INCREMENT PRIMARY KEY,
-  `user_id` BIGINT NOT NULL,
   `post_id` BIGINT NOT NULL,
+  `user_id` BIGINT DEFAULT NULL,
+  `ip_hash` VARCHAR(64) DEFAULT NULL COMMENT '浏览器指纹，用于未登录点赞去重',
   `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
-  UNIQUE KEY `uk_user_post` (`user_id`, `post_id`),
+  UNIQUE KEY `uk_post_user` (`post_id`, `user_id`),
+  UNIQUE KEY `uk_post_ip` (`post_id`, `ip_hash`),
   INDEX `idx_post_id` (`post_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
